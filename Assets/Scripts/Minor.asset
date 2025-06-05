@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chord:
   - E
-  - F
-  - G#
+  - F#
+  - G
   - A
   - B
   - C

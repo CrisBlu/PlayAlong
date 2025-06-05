@@ -8,8 +8,10 @@ public class Tutorial : MonoBehaviour
     [SerializeField] List<Chord> chords;
     [SerializeField] private List<GameObject> notes;
     [SerializeField] private TextMeshPro currentChordDisplay;
+    [SerializeField] private TextMeshPro currentScaleDisplay;
     private string[] playedPowerChords = new string[] { "E", "A", "B", "E" };
     private int chordIndex = 0;
+    private int scaleIndex = 0;
     SetChords SetChords = new SetChords();
 
     //Song beats per minute
@@ -50,6 +52,14 @@ public class Tutorial : MonoBehaviour
         musicSource.Play();
 
         SetChords.HighlightNotes(notes.ToArray(), chords[0]);
+    }
+
+    public void NextScale(int next)
+    {
+        scaleIndex += next;
+        scaleIndex %= chords.ToArray().Length;
+        currentScaleDisplay.text = chords[scaleIndex].name;
+        SetChords.HighlightNotes(notes.ToArray(), chords[scaleIndex]);
     }
 
     void Update()
