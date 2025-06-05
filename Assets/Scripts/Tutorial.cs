@@ -35,6 +35,9 @@ public class Tutorial : MonoBehaviour
     //an AudioSource attached to this GameObject that will play the music.
     private AudioSource musicSource;
 
+    //My voice overs
+    [SerializeField] private AudioClip[] audioClips;
+
 
     // Thank you to Graham Tattersall and his article "Coding to the Beat" for the beat keeping part of this code
     void Start()
