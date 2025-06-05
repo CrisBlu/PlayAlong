@@ -39,7 +39,6 @@ public class SetChords
         {
             bool inScale = false;
 
-            Debug.LogWarning(note.name + " Checking for");
             foreach (string scaleNote in scale.chord)
             {
                 if(note.name == scaleNote)

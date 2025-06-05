@@ -32,11 +32,15 @@ public class Tutorial : MonoBehaviour
 
     private bool chordChangeLocked = false;
 
+    private bool playedthird = false;
+    private bool playedfourth = false;
+
     //an AudioSource attached to this GameObject that will play the music.
     private AudioSource musicSource;
 
     //My voice overs
     [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioSource speakingAudioSource;
 
 
     // Thank you to Graham Tattersall and his article "Coding to the Beat" for the beat keeping part of this code
@@ -53,8 +57,16 @@ public class Tutorial : MonoBehaviour
 
         //Start the music
         musicSource.Play();
+        speakingAudioSource.PlayOneShot(audioClips[0],10.0f);
+
+        Invoke("PlayNextSoundClip", 25f);
 
         SetChords.HighlightNotes(notes.ToArray(), chords[0]);
+    }
+
+    void PlayNextSoundClip()
+    {
+        speakingAudioSource.PlayOneShot(audioClips[1], 10.0f);
     }
 
     public void NextScale(int next)
@@ -63,6 +75,19 @@ public class Tutorial : MonoBehaviour
         scaleIndex %= chords.ToArray().Length;
         currentScaleDisplay.text = chords[scaleIndex].name;
         SetChords.HighlightNotes(notes.ToArray(), chords[scaleIndex]);
+
+        if(scaleIndex == 1 && !playedthird)
+        {
+            Debug.LogWarning("Trigged third audio clip");
+            playedthird = true;
+            speakingAudioSource.PlayOneShot(audioClips[2], 10.0f);
+        }
+
+        if (scaleIndex == 2 && !playedfourth)
+        {
+            playedfourth = true;
+            speakingAudioSource.PlayOneShot(audioClips[3], 10.0f);
+        }
     }
 
     void Update()
