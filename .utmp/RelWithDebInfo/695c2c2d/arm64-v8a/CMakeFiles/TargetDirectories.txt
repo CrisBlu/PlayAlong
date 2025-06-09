@@ -1,0 +1,5 @@
+C:/Users/Chris/Documents/GitHub/PlayAlong/.utmp/RelWithDebInfo/695c2c2d/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Chris/Documents/GitHub/PlayAlong/.utmp/RelWithDebInfo/695c2c2d/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/Chris/Documents/GitHub/PlayAlong/.utmp/RelWithDebInfo/695c2c2d/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/Chris/Documents/GitHub/PlayAlong/.utmp/RelWithDebInfo/695c2c2d/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/Chris/Documents/GitHub/PlayAlong/.utmp/RelWithDebInfo/695c2c2d/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
